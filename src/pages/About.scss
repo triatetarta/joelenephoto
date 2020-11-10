@@ -1,0 +1,86 @@
+@import '../variables';
+
+.about {
+  display: flex;
+  flex-direction: row;
+  padding-top: 4rem;
+  height: 90vh;
+  position: relative;
+  .about-images {
+    width: 65%;
+    position: relative;
+    .image-container {
+      position: absolute;
+      img {
+        width: 250px;
+        object-fit: cover;
+      }
+    }
+    .image-container:nth-child(1) {
+      position: absolute;
+      top: 1vh;
+      left: 0vh;
+    }
+    .image-container:nth-child(2) {
+      position: absolute;
+      top: 5vh;
+      left: 9vh;
+    }
+    .image-container:nth-child(3) {
+      position: absolute;
+      top: 8vh;
+      left: 20vh;
+    }
+    .image-container:nth-child(4) {
+      position: absolute;
+      top: 12vh;
+      left: 32vh;
+    }
+    .image-container:nth-child(5) {
+      position: absolute;
+      top: 20vh;
+      left: 55vh;
+    }
+    .image-container:nth-child(6) {
+      position: absolute;
+      top: 25vh;
+      left: 40vh;
+    }
+  }
+  .about-text {
+    width: 35%;
+    padding-right: 5rem;
+
+    h1 {
+      color: $orange;
+      font-size: 5rem;
+      font-weight: bolder;
+      line-height: 0.8;
+    }
+    h2 {
+      color: $orange;
+      font-size: 4.3rem;
+      font-weight: lighter;
+      line-height: 0.8;
+    }
+    p {
+      color: $black;
+      font-size: 1.1rem;
+      padding-top: 1rem;
+    }
+  }
+
+  .back {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 5vh;
+    left: 0;
+    background-color: $orange;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid $black;
+  }
+}

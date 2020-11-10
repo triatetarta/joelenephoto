@@ -1,0 +1,63 @@
+.main-images {
+  position: relative;
+
+  .image-container {
+    width: 20vw;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .image-container:nth-child(1) {
+    position: absolute;
+    top: -7vh;
+    left: 7vw;
+    z-index: -1;
+
+    img {
+      width: 70%;
+    }
+  }
+  .image-container:nth-child(2) {
+    position: absolute;
+    top: 28vh;
+    left: 17vw;
+    z-index: 2;
+
+    img {
+      width: 60%;
+    }
+  }
+  .image-container:nth-child(3) {
+    position: absolute;
+    top: -8vh;
+    left: 28vw;
+    z-index: 3;
+
+    img {
+      width: 110%;
+    }
+  }
+  .image-container:nth-child(4) {
+    position: absolute;
+    top: 22vh;
+    right: 11vw;
+    z-index: 2;
+
+    img {
+      width: 70%;
+    }
+  }
+  .image-container:nth-child(5) {
+    position: absolute;
+    top: 0vh;
+    right: 0vw;
+    z-index: 1;
+
+    img {
+      width: 65%;
+    }
+  }
+}

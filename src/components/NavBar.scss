@@ -1,0 +1,12 @@
+nav {
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  svg {
+    cursor: pointer;
+  }
+}
