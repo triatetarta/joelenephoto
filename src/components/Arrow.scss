@@ -1,0 +1,11 @@
+@import '../variables';
+
+.arrow {
+  position: absolute;
+  right: 0;
+  bottom: 11vh;
+
+  svg {
+    cursor: pointer;
+  }
+}

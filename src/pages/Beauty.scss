@@ -1,0 +1,147 @@
+@import '../variables';
+
+.beauty-gallery {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .cl-1 {
+    height: 100%;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    .row-1 {
+      padding-left: 1rem;
+      .hide {
+        padding-bottom: 1rem;
+        span {
+          color: $orange;
+          font-weight: bold;
+        }
+      }
+    }
+    .row-2 {
+      align-self: center;
+      padding-right: 4rem;
+      h4 {
+        color: $orange;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+  .cl-2 {
+    flex: 1;
+    align-self: flex-start;
+
+    .image-container {
+      position: absolute;
+      img {
+        width: 250px;
+        object-fit: cover;
+      }
+    }
+    .image-container:nth-child(1) {
+      position: absolute;
+      z-index: 1;
+      left: 23vw;
+      img {
+        width: 6vw;
+      }
+    }
+    .image-container:nth-child(2) {
+      position: absolute;
+      z-index: 0;
+      top: 16vh;
+      left: 20vw;
+      img {
+        width: 8vw;
+      }
+    }
+    .image-container:nth-child(3) {
+      position: absolute;
+      top: 36vh;
+      left: 14vw;
+      img {
+        width: 10vw;
+      }
+    }
+    .image-container:nth-child(4) {
+      position: absolute;
+      bottom: 5vh;
+      left: 30vw;
+      z-index: 4;
+      img {
+        width: 13vw;
+      }
+    }
+    .image-container:nth-child(5) {
+      position: absolute;
+      top: 4vh;
+      left: 35vw;
+      z-index: 2;
+      img {
+        width: 17vw;
+      }
+    }
+    .image-container:nth-child(6) {
+      position: absolute;
+      top: 0vh;
+      right: 5vw;
+      z-index: 4;
+      img {
+        width: 13vw;
+      }
+    }
+    .image-container:nth-child(7) {
+      position: absolute;
+      bottom: 12vh;
+      right: 4vw;
+      z-index: 1;
+      img {
+        width: 9vw;
+      }
+    }
+    .image-container:nth-child(8) {
+      position: absolute;
+      bottom: 7vh;
+      right: 22vw;
+      z-index: 4;
+      img {
+        width: 10vw;
+      }
+    }
+  }
+  .cl-3 {
+    flex: 3;
+    align-self: start;
+    padding-top: 2rem;
+
+    .row-1 {
+      h4 {
+        color: $orange;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 0.9;
+        position: relative;
+        z-index: 1;
+      }
+      h5 {
+        color: $orange;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 0.9;
+        position: relative;
+        z-index: 3;
+      }
+    }
+  }
+}

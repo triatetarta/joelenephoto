@@ -1,12 +1,33 @@
+@import '../variables';
+@import '../breakpoints/breakpoints.scss';
+
 nav {
+  overflow: hidden;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
+  z-index: 100;
 
-  svg {
+  img {
     cursor: pointer;
+  }
+
+  .nav-title {
+    overflow: hidden;
+    h2 {
+      color: $orange;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.4rem;
+      font-weight: bold;
+
+      @include media('<=phone') {
+        display: none;
+      }
+    }
   }
 }

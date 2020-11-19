@@ -4,83 +4,126 @@
   display: flex;
   flex-direction: row;
   padding-top: 4rem;
-  height: 90vh;
+  min-height: 90vh;
   position: relative;
+  overflow: hidden;
+
+  .frame1 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #181317;
+    z-index: 9999;
+  }
+  .frame2 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: $orange;
+    z-index: 9999;
+  }
+
   .about-images {
-    width: 65%;
+    width: 60%;
     position: relative;
+
     .image-container {
-      position: absolute;
-      img {
-        width: 250px;
-        object-fit: cover;
+      cursor: grab;
+
+      .image-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        pointer-events: none;
+
+        img {
+          top: 0;
+          left: 0;
+          position: absolute;
+
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          pointer-events: none;
+          border: 2px solid $black;
+        }
       }
     }
     .image-container:nth-child(1) {
       position: absolute;
-      top: 1vh;
-      left: 0vh;
+      top: 0vh;
+      left: 10vw;
+      width: 12vw;
+      padding-bottom: 42vh;
     }
     .image-container:nth-child(2) {
       position: absolute;
-      top: 5vh;
-      left: 9vh;
+      top: 28vh;
+      left: 14vw;
+      width: 12vw;
+      padding-bottom: 42vh;
     }
     .image-container:nth-child(3) {
       position: absolute;
-      top: 8vh;
-      left: 20vh;
+      top: -9vh;
+      left: 20vw;
+      width: 12vw;
+      padding-bottom: 42vh;
     }
     .image-container:nth-child(4) {
       position: absolute;
-      top: 12vh;
-      left: 32vh;
+      top: 3vh;
+      left: 16vw;
+      width: 12vw;
+      padding-bottom: 42vh;
     }
     .image-container:nth-child(5) {
       position: absolute;
-      top: 20vh;
-      left: 55vh;
+      top: 32vh;
+      right: 14vw;
+      width: 12vw;
+      padding-bottom: 42vh;
     }
     .image-container:nth-child(6) {
       position: absolute;
-      top: 25vh;
-      left: 40vh;
+      top: 8vh;
+      right: 10vw;
+      width: 12vw;
+      padding-bottom: 42vh;
     }
   }
   .about-text {
-    width: 35%;
+    width: 40%;
     padding-right: 5rem;
 
     h1 {
       color: $orange;
-      font-size: 5rem;
-      font-weight: bolder;
+      font-size: 4rem;
+      font-weight: 900;
       line-height: 0.8;
     }
     h2 {
       color: $orange;
-      font-size: 4.3rem;
-      font-weight: lighter;
+      font-size: 4rem;
+      font-weight: 300;
       line-height: 0.8;
     }
     p {
       color: $black;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       padding-top: 1rem;
+      font-family: 'NotoSans';
     }
   }
+}
 
-  .back {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 5vh;
-    left: 0;
-    background-color: $orange;
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    border: 1px solid $black;
-  }
+.hide {
+  overflow: hidden;
 }

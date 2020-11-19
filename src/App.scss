@@ -1,4 +1,49 @@
 @import 'variables';
+@import './breakpoints//breakpoints.scss';
+
+@font-face {
+  font-family: 'BaskerVille';
+  font-weight: 300;
+  src: local('BaskerVille'),
+    url(./fonts/BaskervilleSerial-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'BaskerVille';
+  font-weight: 400;
+  src: local('BaskerVille'),
+    url(./fonts/BaskervilleSerial-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'BaskerVille';
+  font-weight: 500;
+  src: local('BaskerVille'),
+    url(./fonts/BaskervilleSerial-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'BaskerVille';
+  font-weight: 600;
+  src: local('BaskerVille'),
+    url(./fonts/BaskervilleSerial-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'BaskerVille';
+  font-weight: 700;
+  src: local('BaskerVille'),
+    url(./fonts/BaskervilleSerial-Heavy.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'BaskerVille';
+  font-weight: 900;
+  src: local('BaskerVille'),
+    url(./fonts/BaskervilleSerial-Heavy.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: local('NotoSans'), url(./fonts/NotoSans.ttc) format('truetype');
+}
 
 * {
   margin: 0;
@@ -7,10 +52,17 @@
 }
 
 body {
+  font-family: 'BaskerVille', sans-serif;
   background-color: $bg-color;
+  overflow-x: hidden;
 }
 
 .container {
   width: 80vw;
   margin: 0 auto;
+  position: relative;
+
+  @include media('<=phone') {
+    width: 85vw;
+  }
 }

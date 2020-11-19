@@ -1,0 +1,109 @@
+@import '../variables';
+
+.hamMenu {
+  background-color: $bg-black !important;
+  position: fixed;
+  z-index: 15;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+
+  .container {
+    flex-grow: 1;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    width: auto;
+    height: 100%;
+
+    .nav-list {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          overflow: hidden;
+          font-size: 5rem;
+          text-transform: uppercase;
+          font-weight: 900;
+          height: 96px;
+          line-height: 96px;
+          a {
+            text-decoration: none;
+          }
+          .link {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .arrow-right {
+              height: 96px;
+
+              svg {
+                width: 100px;
+                path {
+                  fill: $orange;
+                }
+              }
+            }
+
+            button {
+              font-family: 'BaskerVille', sans-serif;
+              background: transparent;
+              border: none;
+              font-size: 5rem;
+              font-weight: 900;
+              outline: none;
+              cursor: pointer;
+              text-transform: uppercase;
+              padding-left: 15px;
+            }
+          }
+        }
+
+        li:nth-child(odd) a button {
+          color: $menu-odd;
+        }
+        li:nth-child(even) a button {
+          color: $orange;
+        }
+      }
+    }
+
+    .nav-videos {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 25%;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      background: $bg-black;
+
+      .reveal {
+        width: 100%;
+        background: $bg-black;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .video {
+        background: $bg-black;
+        position: absolute;
+        height: 100%;
+        margin: 0;
+        z-index: -1;
+        video {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

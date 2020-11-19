@@ -1,0 +1,80 @@
+@import '../variables';
+
+.contact-me {
+  height: 90vh;
+  position: relative;
+
+  .contact-details {
+    position: absolute;
+    bottom: 15vh;
+    left: 25vh;
+    .col-1 {
+      .row {
+        h1 {
+          color: $orange;
+          font-size: 4rem;
+          font-weight: 700;
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: $orange;
+        }
+      }
+    }
+  }
+
+  .images-contact {
+    height: 100%;
+    .image-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      img {
+        width: 13vw;
+        object-fit: cover;
+      }
+    }
+    .image-container:nth-child(1) {
+      position: absolute;
+      top: 14vh;
+      left: 23vw;
+      z-index: 2;
+      img {
+        width: 11vw;
+      }
+    }
+    .image-container:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 32vw;
+      z-index: 1;
+      img {
+        width: 10vw;
+      }
+    }
+    .image-container:nth-child(3) {
+      position: absolute;
+      top: 13vh;
+      left: 40vw;
+      img {
+        width: 18vw;
+      }
+    }
+    .image-container:nth-child(4) {
+      position: absolute;
+      top: 6vh;
+      img {
+        width: 13vw;
+      }
+    }
+    .image-container:nth-child(5) {
+      position: absolute;
+      top: 40vh;
+      right: 10vw;
+      img {
+        width: 14vw;
+      }
+    }
+  }
+}

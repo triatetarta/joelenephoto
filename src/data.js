@@ -9,6 +9,19 @@ import image8 from './images/img-08.jpg';
 import image9 from './images/img-09.jpg';
 import image10 from './images/img-10.jpg';
 import image11 from './images/img-11.jpg';
+import image12 from './images/img-12.jpg';
+import image13 from './images/img-13.jpg';
+import image14 from './images/img-14.jpg';
+import image15 from './images/img-15.jpg';
+import image16 from './images/img-16.jpg';
+import image17 from './images/img-17.jpg';
+import image18 from './images/img-18.jpg';
+import image19 from './images/img-19.jpg';
+import image20 from './images/img-20.jpg';
+import image21 from './images/img-21.jpg';
+import image22 from './images/img-22.jpg';
+import image23 from './images/img-23.jpg';
+import image24 from './images/img-24.jpg';
 
 export const mainImages = [
   {
@@ -68,5 +81,76 @@ export const aboutImages = [
     id: 11,
     name: 'Model Photo 11',
     url: image11,
+  },
+];
+
+export const beautyGallery = [
+  {
+    id: 12,
+    name: 'Model Photo 12',
+    url: image12,
+  },
+  {
+    id: 13,
+    name: 'Model Photo 13',
+    url: image13,
+  },
+  {
+    id: 14,
+    name: 'Model Photo 14',
+    url: image14,
+  },
+  {
+    id: 15,
+    name: 'Model Photo 15',
+    url: image15,
+  },
+  {
+    id: 16,
+    name: 'Model Photo 16',
+    url: image16,
+  },
+  {
+    id: 17,
+    name: 'Model Photo 17',
+    url: image17,
+  },
+  {
+    id: 18,
+    name: 'Model Photo 18',
+    url: image18,
+  },
+  {
+    id: 19,
+    name: 'Model Photo 19',
+    url: image19,
+  },
+];
+
+export const contactImages = [
+  {
+    id: 20,
+    name: 'Model Photo 20',
+    url: image20,
+  },
+  {
+    id: 21,
+    name: 'Model Photo 21',
+    url: image21,
+  },
+  {
+    id: 22,
+    name: 'Model Photo 22',
+    url: image22,
+  },
+  {
+    id: 23,
+    name: 'Model Photo 23',
+    url: image23,
+  },
+  {
+    id: 24,
+    name: 'Model Photo 24',
+    url: image24,
   },
 ];
