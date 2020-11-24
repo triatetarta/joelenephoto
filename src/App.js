@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Beauty from './pages/Beauty';
+
 import ContactMe from './pages/ContactMe';
 import Loader from './pages/Loader';
 

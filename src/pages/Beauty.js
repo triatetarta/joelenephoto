@@ -1,74 +1,81 @@
 import React from 'react';
-import Arrow from '../components/Arrow';
 import { beautyGallery } from '../data';
 import './Beauty.scss';
 
 import { motion } from 'framer-motion';
-import { pageAnimation } from '../animation';
+import {
+  pageAnimation,
+  beautyKylie,
+  repeatGallery,
+  maskReveal2,
+  imageReveal2,
+} from '../animation';
+import Social from '../components/Social';
+import ViewMore from '../components/ViewMore';
+import BeautyMobile from '../components/BeautyMobile';
+import Arrow from '../components/Arrow';
+import { Link } from 'react-router-dom';
 
 const Beauty = () => {
   return (
-    <motion.div
-      className='beauty-gallery'
-      variants={pageAnimation}
-      initial='from'
-      animate='to'
-      exit='exit'
-    >
-      <div className='cl-1'>
-        <div className='row-1'>
-          <div className='hide'>
-            <span>VIEW</span>
+    <>
+      <motion.div
+        className='beauty-gallery'
+        variants={pageAnimation}
+        initial='from'
+        animate='to'
+        exit='exit'
+      >
+        <div className='cl-1'>
+          <div className='row-1'>
+            <ViewMore />
           </div>
-          <div className='hide'>
-            <span>MORE</span>
-          </div>
-          <div className='hide'>
-            <span>ON MY</span>
-          </div>
-          <div className='hide'>
-            <span>INSTAGRAM</span>
-          </div>
-          <div className='hide'>
-            <span>PAGE</span>
-          </div>
+          <motion.div className='row-2'>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+            <motion.h4 variants={beautyKylie}>JOELENE KYLIE</motion.h4>
+          </motion.div>
         </div>
-        <div className='row-2'>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
-          <h4>JOELENE KYLIE</h4>
+        <motion.div className='cl-2'>
+          {beautyGallery.map((image) => {
+            const { id, url, name } = image;
+            return (
+              <motion.div drag className='image-container' key={id}>
+                <motion.div variants={maskReveal2} className='image-mask'>
+                  <motion.img variants={imageReveal2} src={url} alt={name} />
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+        <div className='cl-3'>
+          <motion.div className='row-1'>
+            <motion.h4 variants={repeatGallery}>GALLERY GALLERY</motion.h4>
+            <motion.h4 variants={repeatGallery}>GALLERY GALLERY</motion.h4>
+            <motion.h5 variants={repeatGallery}>GALLERY GALLERY</motion.h5>
+            <motion.h5 variants={repeatGallery}>GALLERY GALLERY</motion.h5>
+            <motion.h5 variants={repeatGallery}>GALLERY GALLERY</motion.h5>
+            <motion.h4 variants={repeatGallery}>GALLERY GALLERY</motion.h4>
+            <motion.h4 variants={repeatGallery}>GALLERY GALLERY</motion.h4>
+            <motion.h4 variants={repeatGallery}>GALLERY GALLERY</motion.h4>
+          </motion.div>
         </div>
+
+        <Social />
+      </motion.div>
+      <BeautyMobile />
+      <div className='hide-arrow'>
+        <Link to='/'>
+          <Arrow />
+        </Link>
       </div>
-      <div className='cl-2'>
-        {beautyGallery.map((image) => {
-          const { id, url, name } = image;
-          return (
-            <div className='image-container' key={id}>
-              <img src={url} alt={name} />
-            </div>
-          );
-        })}
-      </div>
-      <div className='cl-3'>
-        <div className='row-1'>
-          <h4>GALLERY GALLERY</h4>
-          <h4>GALLERY GALLERY</h4>
-          <h5>GALLERY GALLERY</h5>
-          <h5>GALLERY GALLERY</h5>
-          <h5>GALLERY GALLERY</h5>
-          <h4>GALLERY GALLERY</h4>
-          <h4>GALLERY GALLERY</h4>
-          <h4>GALLERY GALLERY</h4>
-        </div>
-      </div>
-      <Arrow />
-    </motion.div>
+    </>
   );
 };
 

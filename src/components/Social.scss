@@ -3,29 +3,57 @@
 
 .social {
   position: absolute;
-  bottom: 8vh;
-  left: 0;
+  bottom: 5vh;
+  left: -15vh;
+  overflow: hidden;
+  z-index: 1;
 
-  ul {
-    list-style: none;
-    li {
-      padding-bottom: 2.6rem;
+  @include media('<=tablet') {
+    left: -2vh;
+  }
+
+  .social-container {
+    position: relative;
+    .social-name {
+      color: $black;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-bottom: 2.5rem;
+      font-weight: 900;
+      overflow: hidden;
 
       a {
+        font-family: 'BaskerVille', sans-serif;
+        text-transform: uppercase;
         text-decoration: none;
         color: $black;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
         font-weight: 900;
+        cursor: pointer;
 
-        button {
-          color: $black;
+        h6 {
+          display: inline-block;
+          font-size: 1rem;
+        }
+
+        span {
           font-family: 'BaskerVille', sans-serif;
-          background: transparent;
-          border: none;
-          font-size: 1.1rem;
+          text-transform: uppercase;
+          position: relative;
+          font-size: 1rem;
+          letter-spacing: 0.1rem;
           font-weight: 900;
-          outline: none;
-          cursor: pointer;
-          padding: 0.5rem;
+
+          .reveal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $bg-color;
+          }
         }
       }
     }

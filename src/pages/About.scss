@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../breakpoints/breakpoints.scss';
 
 .about {
   display: flex;
@@ -6,30 +7,22 @@
   padding-top: 4rem;
   min-height: 90vh;
   position: relative;
-  overflow: hidden;
 
-  .frame1 {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: #181317;
-    z-index: 9999;
+  @include media('<=phone') {
+    padding-top: 1rem !important;
   }
-  .frame2 {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: $orange;
-    z-index: 9999;
+
+  @include media('<=tablet') {
+    padding-top: 6rem;
   }
 
   .about-images {
     width: 60%;
     position: relative;
+
+    @include media('<=phone') {
+      display: none;
+    }
 
     .image-container {
       cursor: grab;
@@ -47,7 +40,6 @@
           top: 0;
           left: 0;
           position: absolute;
-
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -62,6 +54,14 @@
       left: 10vw;
       width: 12vw;
       padding-bottom: 42vh;
+      z-index: 2;
+
+      @include media('<=tablet') {
+        top: 8vh;
+        left: 2vw;
+        width: 16vw;
+        padding-bottom: 20vh;
+      }
     }
     .image-container:nth-child(2) {
       position: absolute;
@@ -69,6 +69,14 @@
       left: 14vw;
       width: 12vw;
       padding-bottom: 42vh;
+      z-index: 3;
+
+      @include media('<=tablet') {
+        top: 38vh;
+        left: 6vw;
+        width: 16vw;
+        padding-bottom: 20vh;
+      }
     }
     .image-container:nth-child(3) {
       position: absolute;
@@ -76,6 +84,14 @@
       left: 20vw;
       width: 12vw;
       padding-bottom: 42vh;
+      z-index: 4;
+
+      @include media('<=tablet') {
+        left: 12vw;
+        top: 2vh;
+        width: 16vw;
+        padding-bottom: 20vh;
+      }
     }
     .image-container:nth-child(4) {
       position: absolute;
@@ -83,6 +99,13 @@
       left: 16vw;
       width: 12vw;
       padding-bottom: 42vh;
+      z-index: 5;
+
+      @include media('<=tablet') {
+        top: 20vh;
+        width: 16vw;
+        padding-bottom: 20vh;
+      }
     }
     .image-container:nth-child(5) {
       position: absolute;
@@ -90,6 +113,13 @@
       right: 14vw;
       width: 12vw;
       padding-bottom: 42vh;
+      z-index: 6;
+
+      @include media('<=tablet') {
+        top: 46vh;
+        width: 16vw;
+        padding-bottom: 20vh;
+      }
     }
     .image-container:nth-child(6) {
       position: absolute;
@@ -97,31 +127,72 @@
       right: 10vw;
       width: 12vw;
       padding-bottom: 42vh;
+      z-index: 7;
+
+      @include media('<=tablet') {
+        top: 6vh;
+        right: 9vw;
+        width: 16vw;
+        padding-bottom: 20vh;
+      }
     }
   }
   .about-text {
     width: 40%;
     padding-right: 5rem;
 
+    @include media('<=phone') {
+      width: 100%;
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+
     h1 {
       color: $orange;
       font-size: 4rem;
       font-weight: 900;
       line-height: 0.8;
+
+      @include media('<=phone') {
+        font-size: 3.5rem;
+      }
     }
     h2 {
       color: $orange;
       font-size: 4rem;
       font-weight: 300;
       line-height: 0.8;
+      @include media('<=phone') {
+        font-size: 3.5rem;
+      }
     }
     p {
       color: $black;
       font-size: 0.9rem;
       padding-top: 1rem;
       font-family: 'NotoSans';
+
+      @include media('<=tablet') {
+        font-size: 0.8rem;
+      }
     }
   }
+
+  .social {
+    @include media('<=phone') {
+      display: none;
+    }
+  }
+}
+
+.hide-arrow {
+  overflow-y: hidden !important;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 12vw;
+  z-index: 0;
 }
 
 .hide {

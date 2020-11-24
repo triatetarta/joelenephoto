@@ -1,0 +1,89 @@
+@import '../variables';
+@import '../breakpoints/breakpoints.scss';
+
+.section {
+  width: 85vw;
+  position: relative;
+  @include media('>=phone') {
+    display: none;
+  }
+
+  .hide {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: -4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: $orange;
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: lighter;
+    }
+  }
+
+  .section-center {
+    margin: 0 auto;
+    width: 80vw;
+    height: 85vh;
+    text-align: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    .image-container {
+      margin-top: 1rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.3s linear;
+      .person-img {
+        width: 80vw;
+        height: 75vh;
+        object-fit: cover;
+      }
+
+      h4 {
+        position: absolute;
+        color: $black;
+        font-size: 2.2rem;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+
+    button {
+      position: absolute;
+      bottom: 0;
+      background: transparent;
+      outline: none;
+      border: none;
+      transition: all 0.3s linear;
+    }
+
+    .next {
+      right: 0;
+    }
+    .prev {
+      left: 40vw;
+    }
+  }
+
+  .hide {
+    overflow: hidden;
+  }
+}
+
+.image-container.activeSlide {
+  opacity: 1 !important;
+  transform: translateX(0);
+}
+.image-container.lastSlide {
+  transform: translateX(-100%) !important;
+}
+.image-container.nextSlide {
+  transform: translateX(100%);
+}

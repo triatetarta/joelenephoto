@@ -1,6 +1,11 @@
 @import '../variables';
+@import '../breakpoints/breakpoints.scss';
 
 .beauty-gallery {
+  @include media('<=phone') {
+    display: none;
+  }
+
   width: 100%;
   height: 90vh;
   display: flex;
@@ -19,6 +24,7 @@
 
     .row-1 {
       padding-left: 1rem;
+      position: relative;
       .hide {
         padding-bottom: 1rem;
         span {
@@ -44,79 +50,134 @@
 
     .image-container {
       position: absolute;
-      img {
-        width: 250px;
-        object-fit: cover;
+      cursor: grab;
+
+      .image-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        pointer-events: none;
+
+        img {
+          top: 0;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          pointer-events: none;
+          border: 2px solid $black;
+        }
       }
     }
     .image-container:nth-child(1) {
       position: absolute;
-      z-index: 1;
+      top: 2vh;
       left: 23vw;
-      img {
-        width: 6vw;
+      width: 10vw;
+      padding-bottom: 30vh;
+      z-index: 3;
+
+      @include media('<=tablet') {
+        width: 20vw;
+        padding-bottom: 25vh;
       }
     }
     .image-container:nth-child(2) {
       position: absolute;
-      z-index: 0;
-      top: 16vh;
+      top: 21vh;
       left: 20vw;
-      img {
-        width: 8vw;
+      width: 12vw;
+      padding-bottom: 34vh;
+      z-index: 2;
+
+      @include media('<=tablet') {
+        width: 22vw;
+        padding-bottom: 30vh;
       }
     }
     .image-container:nth-child(3) {
       position: absolute;
-      top: 36vh;
+      top: 42vh;
       left: 14vw;
-      img {
-        width: 10vw;
+      width: 10vw;
+      padding-bottom: 32vh;
+      z-index: 3;
+
+      @include media('<=tablet') {
+        width: 24vw;
+        padding-bottom: 30vh;
       }
     }
     .image-container:nth-child(4) {
       position: absolute;
       bottom: 5vh;
       left: 30vw;
+      width: 12vw;
+      padding-bottom: 40vh;
       z-index: 4;
-      img {
-        width: 13vw;
+
+      @include media('<=tablet') {
+        width: 22vw;
+        padding-bottom: 26vh;
       }
     }
     .image-container:nth-child(5) {
       position: absolute;
       top: 4vh;
       left: 35vw;
+      width: 17vw;
+      padding-bottom: 49vh;
       z-index: 2;
-      img {
-        width: 17vw;
+
+      @include media('<=tablet') {
+        top: 10vh;
+        width: 24vw;
+        padding-bottom: 32vh;
       }
     }
     .image-container:nth-child(6) {
       position: absolute;
-      top: 0vh;
+      top: 1vh;
       right: 5vw;
+      width: 9vw;
+      padding-bottom: 28vh;
       z-index: 4;
-      img {
-        width: 13vw;
+
+      @include media('<=tablet') {
+        width: 18vw;
+        padding-bottom: 20vh;
       }
     }
     .image-container:nth-child(7) {
       position: absolute;
       bottom: 12vh;
-      right: 4vw;
+      right: 3vw;
+      width: 11vw;
+      padding-bottom: 36vh;
       z-index: 1;
-      img {
-        width: 9vw;
+
+      @include media('<=tablet') {
+        width: 20vw;
+        padding-bottom: 22vh;
       }
     }
     .image-container:nth-child(8) {
       position: absolute;
-      bottom: 7vh;
-      right: 22vw;
+      bottom: 10vh;
+      right: 18vw;
+      width: 14vw;
+      padding-bottom: 41vh;
       z-index: 4;
-      img {
-        width: 10vw;
+
+      @include media('<=tablet') {
+        bottom: 30vh;
+        right: 14vw;
+        width: 22vw;
+        padding-bottom: 24vh;
       }
     }
   }
@@ -144,4 +205,14 @@
       }
     }
   }
+}
+
+.hide-arrow {
+  overflow-y: hidden !important;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 12vw;
+  z-index: 0;
 }

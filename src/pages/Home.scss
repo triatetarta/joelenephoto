@@ -4,13 +4,20 @@
 .home {
   height: 90vh;
   position: relative;
-  z-index: 0;
+  // z-index: 0;
 
   &-title {
     line-height: 1.2;
     position: relative;
     display: flex;
     justify-content: center;
+
+    @include media('<=phone') {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.15;
+    }
 
     .hide {
       overflow: hidden;
@@ -23,15 +30,22 @@
       font-size: 9rem;
       text-align: center;
       font-weight: 300;
+      z-index: 3;
 
       @include media('<=phone') {
+        padding-top: 0 !important;
+        font-size: 3.8rem !important;
+        z-index: 4;
+      }
+
+      @include media('<=tablet') {
+        font-size: 5rem;
         padding-top: 2rem;
-        font-size: 2.4rem;
       }
 
       .joelene {
         position: relative;
-        z-index: 0;
+        z-index: 3;
       }
 
       .kylie {
@@ -40,7 +54,46 @@
         -webkit-text-stroke: 2px $orange;
         -webkit-text-fill-color: transparent;
         color: transparent;
+
+        @include media('<=phone') {
+          -webkit-text-stroke: none !important;
+          -webkit-text-fill-color: $orange !important;
+          color: $orange !important;
+        }
       }
+    }
+  }
+
+  .social {
+    @include media('<=phone') {
+      display: none;
+    }
+  }
+
+  .mob-title {
+    display: none;
+
+    @include media('<=phone') {
+      display: flex;
+      width: 100%;
+      position: absolute;
+      bottom: 12vh;
+      justify-content: center;
+      align-items: center;
+      background-color: $orange;
+      color: $white;
+      min-height: 4vh;
+      z-index: 10;
+    }
+  }
+
+  .hide {
+    overflow: hidden;
+
+    h5 {
+      font-weight: lighter;
+      letter-spacing: 0.2rem;
+      opacity: 0.5;
     }
   }
 }

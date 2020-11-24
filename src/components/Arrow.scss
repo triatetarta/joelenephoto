@@ -1,11 +1,25 @@
 @import '../variables';
-
-.arrow {
+@import '../breakpoints/breakpoints.scss';
+.arrow-hide {
   position: absolute;
+  height: 90vh;
   right: 0;
-  bottom: 11vh;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  .arrow {
+    position: relative;
+    z-index: 10;
+    transform: translateY(92%);
 
-  svg {
     cursor: pointer;
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  @include media('<=phone') {
+    display: none;
   }
 }

@@ -121,11 +121,10 @@ export const imageReveal = {
 export const maskReveal1 = {
   from: {
     width: '0%',
-    // y: '-100%',
   },
   to: {
     width: '100%',
-    // y: '0%',
+
     transition: {
       delay: 1,
       duration: 1,
@@ -139,6 +138,60 @@ export const imageReveal1 = {
   },
   to: {
     x: '0%',
+    transition: {
+      delay: 1,
+      duration: 0.4,
+    },
+  },
+};
+
+export const maskReveal2 = {
+  from: {
+    height: '0%',
+  },
+  to: {
+    height: '100%',
+
+    transition: {
+      delay: 1,
+      duration: 1,
+    },
+  },
+};
+
+export const imageReveal2 = {
+  from: {
+    y: '100%',
+  },
+  to: {
+    y: '0%',
+    transition: {
+      delay: 1,
+      duration: 0.4,
+    },
+  },
+};
+
+export const maskReveal3 = {
+  from: {
+    height: '0%',
+  },
+  to: {
+    height: '100%',
+
+    transition: {
+      delay: 1,
+      duration: 1,
+    },
+  },
+};
+
+export const imageReveal3 = {
+  from: {
+    y: '100%',
+  },
+  to: {
+    y: '0%',
     transition: {
       delay: 1,
       duration: 0.4,
@@ -217,6 +270,37 @@ export const menuFade = {
     x: '100%',
     transition: {
       duration: 0.3,
+    },
+  },
+};
+
+export const beautyKylie = {
+  from: {
+    opacity: 0,
+  },
+  to: {
+    opacity: 1,
+    transition: {
+      duration: 1.6,
+      staggerChildren: 0.025,
+      staggerDirection: -1,
+      yoyo: Infinity,
+      ease: [0.76, -0.16, 0.45, 0.83],
+    },
+  },
+};
+
+export const repeatGallery = {
+  from: {
+    opacity: 0,
+  },
+  to: {
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+      staggerChildren: 0.045,
+      yoyo: Infinity,
+      ease: [0.36, 0.09, 0.19, 1.03],
     },
   },
 };

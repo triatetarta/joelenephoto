@@ -7,6 +7,7 @@
   .image-container {
     width: 20vw;
     cursor: grab;
+    position: absolute;
 
     .image-mask {
       position: absolute;
@@ -23,6 +24,10 @@
         object-fit: cover;
         pointer-events: none;
         border: 2px solid $black;
+
+        @include media('<=phone') {
+          border: 1px solid $orange;
+        }
       }
     }
   }
@@ -31,12 +36,18 @@
     position: absolute;
     top: -7vh;
     left: 7vw;
-    z-index: 0;
+    z-index: 2;
     width: 15vw;
     padding-bottom: 45vh;
 
-    img {
-      width: 100%;
+    @include media('<=phone') {
+      display: none;
+    }
+
+    @include media('<=tablet') {
+      top: 0vh;
+      width: 20vw;
+      padding-bottom: 25vh;
     }
   }
   .image-container:nth-child(2) {
@@ -46,6 +57,16 @@
     z-index: 2;
     width: 13vw;
     padding-bottom: 39vh;
+    @include media('<=phone') {
+      display: none;
+    }
+
+    @include media('<=tablet') {
+      top: 38vh;
+      left: 3vw;
+      width: 30vw;
+      padding-bottom: 30vh;
+    }
   }
   .image-container:nth-child(3) {
     position: absolute;
@@ -54,6 +75,21 @@
     z-index: 3;
     width: 26vw;
     padding-bottom: 68vh;
+
+    @include media('<=phone') {
+      left: 0 !important;
+      top: -13vh !important;
+      width: 100% !important;
+      padding-bottom: 70vh !important;
+      margin: 0 auto;
+    }
+
+    @include media('<=tablet') {
+      top: -3vh;
+      left: 18vw;
+      width: 40vw;
+      padding-bottom: 50vh;
+    }
   }
   .image-container:nth-child(4) {
     position: absolute;
@@ -62,13 +98,34 @@
     z-index: 3;
     width: 15vw;
     padding-bottom: 42vh;
+
+    @include media('<=phone') {
+      display: none;
+    }
+
+    @include media('<=tablet') {
+      width: 25vw;
+      padding-bottom: 30vh;
+      top: 36vh;
+      right: 6vw;
+    }
   }
   .image-container:nth-child(5) {
     position: absolute;
     top: 0vh;
     right: 4vw;
-    z-index: 1;
+    z-index: 2;
     width: 11vw;
     padding-bottom: 37vh;
+
+    @include media('<=phone') {
+      display: none;
+    }
+
+    @include media('<=tablet') {
+      width: 30vw;
+      padding-bottom: 30vh;
+      right: 2vw;
+    }
   }
 }

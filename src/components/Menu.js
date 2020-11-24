@@ -12,7 +12,7 @@ const navRoutes = [
   { id: 0, title: 'home', path: '/', video: homeVid },
   { id: 1, title: 'about', path: '/about', video: aboutVid },
   { id: 2, title: 'beauty', path: '/beauty', video: beautyVid },
-  { id: 3, title: 'contact', path: '/contact', video: contactVid },
+  { id: 3, title: 'contact', path: '/contact-me', video: contactVid },
 ];
 
 const Menu = () => {

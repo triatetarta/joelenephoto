@@ -1,0 +1,20 @@
+.view-more {
+  position: absolute;
+  left: 5vw;
+  top: 2vh;
+  opacity: 1;
+  cursor: pointer;
+
+  .view-more-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .view-more-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

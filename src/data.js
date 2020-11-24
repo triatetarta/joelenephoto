@@ -89,41 +89,49 @@ export const beautyGallery = [
     id: 12,
     name: 'Model Photo 12',
     url: image12,
+    number: '1.',
   },
   {
     id: 13,
     name: 'Model Photo 13',
     url: image13,
+    number: '2.',
   },
   {
     id: 14,
     name: 'Model Photo 14',
     url: image14,
+    number: '3.',
   },
   {
     id: 15,
     name: 'Model Photo 15',
     url: image15,
+    number: '4.',
   },
   {
     id: 16,
     name: 'Model Photo 16',
     url: image16,
+    number: '5.',
   },
   {
     id: 17,
     name: 'Model Photo 17',
     url: image17,
+    number: '6.',
   },
   {
     id: 18,
     name: 'Model Photo 18',
     url: image18,
+    number: '7.',
   },
   {
     id: 19,
     name: 'Model Photo 19',
     url: image19,
+    number: '8.',
   },
 ];
 

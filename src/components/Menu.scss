@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../breakpoints/breakpoints.scss';
 
 .hamMenu {
   background-color: $bg-black !important;
@@ -27,6 +28,7 @@
       ul {
         list-style: none;
         padding: 0;
+
         li {
           overflow: hidden;
           font-size: 5rem;
@@ -34,6 +36,7 @@
           font-weight: 900;
           height: 96px;
           line-height: 96px;
+
           a {
             text-decoration: none;
           }
@@ -63,6 +66,10 @@
               cursor: pointer;
               text-transform: uppercase;
               padding-left: 15px;
+
+              @include media('<=phone') {
+                font-size: 3.5rem !important;
+              }
             }
           }
         }
@@ -85,6 +92,10 @@
       height: 100%;
       width: 100%;
       background: $bg-black;
+
+      @include media('<=phone') {
+        display: none;
+      }
 
       .reveal {
         width: 100%;

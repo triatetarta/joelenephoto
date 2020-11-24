@@ -1,53 +1,75 @@
 import React from 'react';
 import './ContactMe.scss';
-import Arrow from '../components/Arrow';
-import Social from '../components/Social';
 import { contactImages } from '../data';
-
 import { motion } from 'framer-motion';
-import { pageAnimation } from '../animation';
+import {
+  pageAnimation,
+  aboutText,
+  aboutTextContainer,
+  maskReveal3,
+  imageReveal3,
+} from '../animation';
+import Arrow from '../components/Arrow';
+import { Link } from 'react-router-dom';
 
 const ContactMe = () => {
   return (
-    <motion.div
-      className='contact-me'
-      variants={pageAnimation}
-      initial='from'
-      animate='to'
-      exit='exit'
-    >
-      <div className='contact-details'>
-        <div className='col-1'>
-          <div className='row'>
-            <h1>
-              CONT<span>ACT</span>
-            </h1>
-          </div>
-          <div className='row'>
-            <p>email:</p>
-          </div>
-          <div className='row'>
-            <p>address:</p>
-          </div>
-          <div className='row'>
-            <p>phone number:</p>
-          </div>
-        </div>
-      </div>
-
-      <div className='images-contact'>
-        {contactImages.map((image) => {
-          const { id, url, name } = image;
-          return (
-            <div className='image-container' key={id}>
-              <img src={url} alt={name} />
+    <>
+      <motion.div
+        className='contact-me'
+        variants={pageAnimation}
+        initial='from'
+        animate='to'
+        exit='exit'
+      >
+        <motion.div variants={aboutTextContainer} className='contact-details'>
+          <div className='col-1'>
+            <div className='row'>
+              <div className='hide'>
+                <motion.h1 variants={aboutText}>CONTACT</motion.h1>
+              </div>
             </div>
-          );
-        })}
+            <div className='row'>
+              <div className='hide'>
+                <motion.p variants={aboutText}>
+                  <a href='mailto:joelenekylie@gmail.com'>
+                    joelenekylie@gmail.com
+                  </a>
+                </motion.p>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='hide'>
+                <motion.p variants={aboutText}>London, UK</motion.p>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='hide'>
+                <motion.p variants={aboutText}>phone number:</motion.p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className='images-contact'>
+          {contactImages.map((image) => {
+            const { id, url, name } = image;
+            return (
+              <motion.div drag className='image-container' key={id}>
+                <motion.div variants={maskReveal3} className='image-mask'>
+                  <motion.img src={url} alt={name} />
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </motion.div>
+      <div className='hide-arrow'>
+        <Link to='/'>
+          <Arrow />
+        </Link>
       </div>
-      <Arrow />
-      <Social />
-    </motion.div>
+    </>
   );
 };
 

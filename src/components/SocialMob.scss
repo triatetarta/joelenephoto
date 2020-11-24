@@ -1,0 +1,30 @@
+@import '../variables';
+@import '../breakpoints/breakpoints.scss';
+
+.social-mob {
+  display: none;
+  @include media('<=phone') {
+    display: flex;
+    position: absolute;
+    bottom: 3vh;
+    width: 100%;
+  }
+
+  .social-mob-container {
+    @include media('<=phone') {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-id {
+      a {
+        text-decoration: none;
+        color: $black;
+        font-weight: bolder;
+      }
+    }
+  }
+}

@@ -18,6 +18,10 @@ nav {
 
   .nav-title {
     overflow: hidden;
+
+    @include media('<phone') {
+      display: none;
+    }
     h2 {
       color: $orange;
       font-size: 0.9rem;

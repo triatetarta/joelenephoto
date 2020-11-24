@@ -64,14 +64,6 @@ const NavBar = ({ history }) => {
             color={isOpen ? '#caa1a1' : '#191919'}
             toggled={isOpen}
             toggle={setOpen}
-            onToggle={(toggled) => {
-              if (toggled) {
-                // open a menu
-              } else {
-                // close a menu
-                return '';
-              }
-            }}
           />
         </div>
       </nav>

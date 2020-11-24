@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../breakpoints/breakpoints.scss';
 
 .contact-me {
   height: 90vh;
@@ -7,18 +8,63 @@
   .contact-details {
     position: absolute;
     bottom: 15vh;
-    left: 25vh;
+    left: 5vw;
+
+    @include media('<=tablet') {
+      left: 8vw;
+    }
     .col-1 {
+      position: relative;
+      z-index: 10;
+      width: 50vw;
       .row {
+        position: relative;
+
         h1 {
           color: $orange;
           font-size: 4rem;
           font-weight: 700;
+
+          @include media('<=phone') {
+            transform: rotate(-90deg) !important;
+            position: absolute;
+            left: -42vw !important;
+            top: -35vh;
+            font-size: 4.5rem;
+          }
         }
         p {
           font-size: 1.4rem;
           font-weight: 500;
           color: $orange;
+
+          @include media('<=phone') {
+            font-size: 1.1rem;
+          }
+
+          a {
+            text-decoration: none;
+            color: $orange;
+          }
+        }
+      }
+
+      .row:nth-child(2) {
+        @include media('<=phone') {
+          position: absolute;
+          top: -70vh;
+        }
+      }
+      .row:nth-child(3) {
+        @include media('<=phone') {
+          position: absolute;
+          top: -65vh;
+        }
+      }
+      .row:nth-child(4) {
+        @include media('<=phone') {
+          position: absolute;
+          top: -60vh;
         }
       }
     }
@@ -30,51 +76,137 @@
       position: absolute;
       top: 0;
       right: 0;
-      img {
-        width: 13vw;
-        object-fit: cover;
+      cursor: grab;
+      z-index: 10;
+
+      .image-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        pointer-events: none;
+
+        img {
+          top: 0;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          pointer-events: none;
+          border: 2px solid $black;
+        }
       }
     }
     .image-container:nth-child(1) {
       position: absolute;
       top: 14vh;
       left: 23vw;
-      z-index: 2;
-      img {
-        width: 11vw;
+      width: 11vw;
+      padding-bottom: 30vh;
+      z-index: 3;
+      @include media('<=phone') {
+        display: none;
+      }
+
+      @include media('<=tablet') {
+        left: 12vw;
+        padding-bottom: 25vh;
+        width: 20vw;
       }
     }
     .image-container:nth-child(2) {
       position: absolute;
       top: 0;
       left: 32vw;
+      width: 10vw;
+      padding-bottom: 30vh;
       z-index: 1;
-      img {
-        width: 10vw;
+
+      @include media('<=phone') {
+        display: none;
+      }
+      @include media('<=tablet') {
+        left: 26vw;
+        width: 20vw;
+        padding-bottom: 25vh;
       }
     }
     .image-container:nth-child(3) {
       position: absolute;
       top: 13vh;
       left: 40vw;
-      img {
-        width: 18vw;
+      width: 18vw;
+      padding-bottom: 52vh;
+      z-index: 1;
+
+      @include media('<=phone') {
+        top: 20vh !important;
+        left: 15vw !important;
+        width: 50vw !important;
+        padding-bottom: 45vh !important;
+      }
+
+      @include media('<=tablet') {
+        top: 26vh;
+        left: 36vw;
+        padding-bottom: 36vh;
+        width: 30vw;
       }
     }
     .image-container:nth-child(4) {
       position: absolute;
       top: 6vh;
-      img {
-        width: 13vw;
+      width: 13vw;
+      padding-bottom: 37vh;
+      z-index: 1;
+
+      @include media('<=phone') {
+        display: none;
+      }
+
+      @include media('<=tablet') {
+        width: 20vw;
+        padding-bottom: 28vh;
       }
     }
     .image-container:nth-child(5) {
       position: absolute;
       top: 40vh;
       right: 10vw;
-      img {
-        width: 14vw;
+      width: 14vw;
+      padding-bottom: 38vh;
+      z-index: 1;
+
+      @include media('<=phone') {
+        right: -3vw !important;
+        top: 35vh !important;
+        width: 50vw !important;
+        padding-bottom: 45vh !important;
+      }
+
+      @include media('<=tablet') {
+        top: 44vh;
+        right: 5vw;
+        padding-bottom: 26vh;
+        width: 21vw;
       }
     }
   }
+}
+
+.hide-arrow {
+  overflow-y: hidden !important;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 12vw;
+  z-index: 0;
+}
+
+.hide {
+  overflow: hidden;
 }
