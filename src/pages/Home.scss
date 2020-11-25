@@ -27,7 +27,8 @@
       display: inline-block;
       position: relative;
       color: $orange;
-      font-size: 9rem;
+      font-size: calc(9.9999vw - 15.38462px);
+      // font-size: 9rem;
       text-align: center;
       font-weight: 300;
       z-index: 3;

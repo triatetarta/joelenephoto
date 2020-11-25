@@ -62,6 +62,10 @@ body {
   margin: 0 auto;
   position: relative;
 
+  @include media('<=desktop') {
+    width: 85vw;
+  }
+
   @include media('<=phone') {
     width: 85vw;
   }

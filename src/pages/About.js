@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './About.scss';
 import Social from '../components/Social';
 import { aboutImages } from '../data';
@@ -15,9 +15,12 @@ import { Link } from 'react-router-dom';
 import Arrow from '../components/Arrow';
 
 const About = () => {
+  const constraintsAbout = useRef(null);
+
   return (
     <>
       <motion.div
+        ref={constraintsAbout}
         className='about'
         variants={pageAnimation}
         initial='from'
@@ -28,7 +31,12 @@ const About = () => {
           {aboutImages.map((image) => {
             const { id, url, name } = image;
             return (
-              <motion.div drag className='image-container' key={id}>
+              <motion.div
+                drag
+                dragConstraints={constraintsAbout}
+                className='image-container'
+                key={id}
+              >
                 <motion.div variants={maskReveal1} className='image-mask'>
                   <motion.img variants={imageReveal1} src={url} alt={name} />
                 </motion.div>

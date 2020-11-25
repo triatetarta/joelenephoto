@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { beautyGallery } from '../data';
 import './Beauty.scss';
-
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   pageAnimation,
@@ -14,12 +14,14 @@ import Social from '../components/Social';
 import ViewMore from '../components/ViewMore';
 import BeautyMobile from '../components/BeautyMobile';
 import Arrow from '../components/Arrow';
-import { Link } from 'react-router-dom';
 
 const Beauty = () => {
+  const contraintsBeauty = useRef(null);
+
   return (
     <>
       <motion.div
+        ref={contraintsBeauty}
         className='beauty-gallery'
         variants={pageAnimation}
         initial='from'
@@ -46,7 +48,12 @@ const Beauty = () => {
           {beautyGallery.map((image) => {
             const { id, url, name } = image;
             return (
-              <motion.div drag className='image-container' key={id}>
+              <motion.div
+                drag
+                dragConstraints={contraintsBeauty}
+                className='image-container'
+                key={id}
+              >
                 <motion.div variants={maskReveal2} className='image-mask'>
                   <motion.img variants={imageReveal2} src={url} alt={name} />
                 </motion.div>

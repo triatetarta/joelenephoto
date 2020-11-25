@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './ContactMe.scss';
 import { contactImages } from '../data';
 import { motion } from 'framer-motion';
@@ -7,15 +7,17 @@ import {
   aboutText,
   aboutTextContainer,
   maskReveal3,
-  imageReveal3,
 } from '../animation';
 import Arrow from '../components/Arrow';
 import { Link } from 'react-router-dom';
 
 const ContactMe = () => {
+  const constraintsContact = useRef(null);
+
   return (
     <>
       <motion.div
+        ref={constraintsContact}
         className='contact-me'
         variants={pageAnimation}
         initial='from'
@@ -55,7 +57,12 @@ const ContactMe = () => {
           {contactImages.map((image) => {
             const { id, url, name } = image;
             return (
-              <motion.div drag className='image-container' key={id}>
+              <motion.div
+                drag
+                dragConstraints={constraintsContact}
+                className='image-container'
+                key={id}
+              >
                 <motion.div variants={maskReveal3} className='image-mask'>
                   <motion.img src={url} alt={name} />
                 </motion.div>

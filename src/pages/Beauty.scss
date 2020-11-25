@@ -215,4 +215,8 @@
   height: 100%;
   width: 12vw;
   z-index: 0;
+
+  @include media('<=phone') {
+    display: none;
+  }
 }
