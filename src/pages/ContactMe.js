@@ -34,7 +34,11 @@ const ContactMe = () => {
             <div className='row'>
               <div className='hide'>
                 <motion.p variants={aboutText}>
-                  <a href='mailto:joelenekylie@gmail.com'>
+                  <a
+                    href='mailto:joelenekylie@gmail.com'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     joelenekylie@gmail.com
                   </a>
                 </motion.p>
@@ -47,7 +51,7 @@ const ContactMe = () => {
             </div>
             <div className='row'>
               <div className='hide'>
-                <motion.p variants={aboutText}>phone number:</motion.p>
+                <motion.p variants={aboutText}>tel: +44 0771 056 6369</motion.p>
               </div>
             </div>
           </div>

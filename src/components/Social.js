@@ -14,7 +14,9 @@ const Social = () => {
           <motion.a
             onHoverStart={() => setRevealInsta(true)}
             onHoverEnd={() => setRevealInsta(false)}
-            href='https://instagram.com'
+            href='https://www.instagram.com/joelenekylie/'
+            target='_blank'
+            rel='noreferrer'
           >
             <h6>in</h6>
             <motion.span>
@@ -33,11 +35,13 @@ const Social = () => {
           <motion.a
             onHoverStart={() => setRevealFace(true)}
             onHoverEnd={() => setRevealFace(false)}
-            href='https://facebook.com'
+            href='https://twitter.com/joelenekylie'
+            target='_blank'
+            rel='noreferrer'
           >
-            <h6>fa</h6>
+            <h6>tw</h6>
             <motion.span>
-              cebook
+              itter
               <motion.div
                 animate={{
                   x: revealFace ? '100%' : '0',
@@ -52,7 +56,9 @@ const Social = () => {
           <motion.a
             onHoverStart={() => setRevealPinte(true)}
             onHoverEnd={() => setRevealPinte(false)}
-            href='https://facebook.com'
+            href='https://uk.pinterest.com/joelenehayward/'
+            target='_blank'
+            rel='noreferrer'
           >
             <h6>pi</h6>
             <motion.span>
