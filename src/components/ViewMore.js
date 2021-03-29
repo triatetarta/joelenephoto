@@ -46,7 +46,11 @@ const ViewMore = () => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <a href='https://instagram.com'>
+      <a
+        href='https://www.instagram.com/joelenekylie/'
+        target='_blank'
+        rel='noreferrer'
+      >
         <motion.svg
           className='view-more-bg'
           width='125'
